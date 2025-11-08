@@ -350,7 +350,7 @@
                 <!-- House shadow -->
                 <ellipse cx="250" cy="180" rx="75" ry="8" fill="rgba(0,0,0,0.2)"/>
 
-                <!-- Smoke trail from chimney with "Thursday" text -->
+                <!-- Smoke trail from chimney -->
                 <g id="smoke" opacity="0.85">
                     <!-- Smoke puffs -->
                     <ellipse cx="280" cy="50" rx="12" ry="15" fill="url(#smokeGradient)">
@@ -371,12 +371,6 @@
                         <animate attributeName="ry" values="20;24;28" dur="3s" repeatCount="indefinite" begin="1s"/>
                         <animate attributeName="opacity" values="0.6;0.5;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
                     </ellipse>
-                    <!-- "Thursday" text in smoke -->
-                    <text x="280" y="30" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#333" text-anchor="middle" opacity="0.9">
-                        <animate attributeName="y" values="30;25;20" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.9;0.7;0.5" dur="3s" repeatCount="indefinite"/>
-                        Thursday
-                    </text>
                 </g>
 
                 <!-- House -->
@@ -418,17 +412,17 @@
                     <rect x="232" y="143" width="36" height="44" fill="none" stroke="#3E2723" stroke-width="1.5"/>
                 </g>
 
-                <!-- House Name Sign "Lift girl" -->
+                <!-- House Name Sign "Marion & Trudi" -->
                 <g id="houseNameSign" filter="url(#shadow)">
                     <!-- Sign board -->
-                    <rect x="215" y="105" width="70" height="20" fill="#FFFFFF" opacity="0.95" stroke="#654321" stroke-width="2" rx="3"/>
+                    <rect x="220" y="103" width="60" height="14" fill="#FFFFFF" opacity="0.95" stroke="#654321" stroke-width="1.5" rx="2"/>
                     <!-- Decorative border -->
-                    <rect x="217" y="107" width="66" height="16" fill="none" stroke="#8B4513" stroke-width="1" rx="2"/>
-                    <!-- Text "Lift girl" -->
-                    <text x="250" y="119" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#654321" text-anchor="middle">Lift girl</text>
+                    <rect x="221" y="104" width="58" height="12" fill="none" stroke="#8B4513" stroke-width="0.8" rx="1.5"/>
+                    <!-- Text "Marion & Trudi" -->
+                    <text x="250" y="113" font-family="Arial, sans-serif" font-size="5.5" font-weight="bold" fill="#654321" text-anchor="middle">Marion &amp; Trudi</text>
                     <!-- Small decorative elements -->
-                    <circle cx="220" cy="112" r="1.5" fill="#8B4513" opacity="0.6"/>
-                    <circle cx="280" cy="112" r="1.5" fill="#8B4513" opacity="0.6"/>
+                    <circle cx="223" cy="109" r="1" fill="#8B4513" opacity="0.6"/>
+                    <circle cx="277" cy="109" r="1" fill="#8B4513" opacity="0.6"/>
                 </g>
 
                 <!-- Sold Sign -->
@@ -439,6 +433,17 @@
                     <rect x="185" y="155" width="35" height="18" fill="#FFFFFF" opacity="0.95" stroke="#000" stroke-width="1.5" rx="2"/>
                     <!-- Text "SOLD" -->
                     <text x="202.5" y="167.5" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#000" text-anchor="middle">SOLD</text>
+                </g>
+
+                <!-- Street Sign "Thursday street" -->
+                <g id="streetSign" filter="url(#shadow)">
+                    <!-- Sign post -->
+                    <rect x="60" y="140" width="3" height="30" fill="#808080" opacity="0.9"/>
+                    <!-- Sign board (typical street sign style - green background) -->
+                    <rect x="45" y="135" width="50" height="20" fill="#228B22" opacity="0.95" stroke="#000" stroke-width="1.5" rx="2"/>
+                    <!-- Text "Thursday street" -->
+                    <text x="70" y="143" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Thursday</text>
+                    <text x="70" y="149" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">street</text>
                 </g>
 
 
