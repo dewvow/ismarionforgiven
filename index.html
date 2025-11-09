@@ -497,13 +497,23 @@
     </div>
 
     <script>
-        // Target date: 3 years from today at 12:00 PM Melbourne time
+        // Target date: 3 months from Tuesday, November 11 at 8:30 PM
         function getTargetDate() {
             const now = new Date();
-            // Create a date 3 years from now at 12:00 PM
-            const targetDate = new Date(now);
-            targetDate.setFullYear(now.getFullYear() + 3);
-            targetDate.setHours(12, 0, 0, 0); // 12:00 PM
+            let year = now.getFullYear();
+            
+            // Find the next November 11 that falls on a Tuesday
+            let nov11 = new Date(year, 10, 11, 20, 30, 0, 0); // November is month 10 (0-indexed), 8:30 PM = 20:30
+            
+            // If we've already passed November 11 this year, or if it's not a Tuesday, find the next one
+            while (nov11 < now || nov11.getDay() !== 2) { // 2 = Tuesday
+                year++;
+                nov11 = new Date(year, 10, 11, 20, 30, 0, 0);
+            }
+            
+            // Add 3 months to that date
+            const targetDate = new Date(nov11);
+            targetDate.setMonth(nov11.getMonth() + 3);
             
             return targetDate;
         }
