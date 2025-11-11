@@ -535,25 +535,10 @@
     </div>
 
     <script>
-        // Target date: 3 months from Tuesday, November 11 at 8:30 PM
+        // Target date: February 11, 2026 at 8:30 PM
         function getTargetDate() {
-            const now = new Date();
-            let year = now.getFullYear();
-            
-            // Find the next November 11 that falls on a Tuesday
-            let nov11 = new Date(year, 10, 11, 20, 30, 0, 0); // November is month 10 (0-indexed), 8:30 PM = 20:30
-            
-            // If we've already passed November 11 this year, or if it's not a Tuesday, find the next one
-            while (nov11 < now || nov11.getDay() !== 2) { // 2 = Tuesday
-                year++;
-                nov11 = new Date(year, 10, 11, 20, 30, 0, 0);
-            }
-            
-            // Add 3 months to that date
-            const targetDate = new Date(nov11);
-            targetDate.setMonth(nov11.getMonth() + 3);
-            
-            return targetDate;
+            // February is month 1 (0-indexed), 8:30 PM = 20:30
+            return new Date(2026, 1, 11, 20, 30, 0, 0);
         }
 
         const target = getTargetDate();
