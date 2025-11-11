@@ -535,6 +535,9 @@
     </div>
 
     <script>
+        // Start date: November 11, 2025 at 8:30 PM
+        const startDate = new Date(2025, 10, 11, 20, 30, 0, 0); // November is month 10 (0-indexed)
+        
         // Target date: February 11, 2026 at 8:30 PM
         function getTargetDate() {
             // February is month 1 (0-indexed), 8:30 PM = 20:30
@@ -564,26 +567,16 @@
         // Display the target date
         targetDateEl.textContent = formatDate(target);
 
-        // Initial displayed hours
+        // Initial displayed hours at start date
         const initialDisplayHours = 2435;
         const initialDisplayMs = initialDisplayHours * 60 * 60 * 1000;
 
-        // Calculate speed factor: actual time remaining / displayed time
-        // This makes the timer run slower so it reaches zero at the target date
-        function calculateSpeedFactor() {
-            const now = new Date();
-            const actualTimeRemaining = target - now;
-            
-            if (actualTimeRemaining <= 0) {
-                return 1; // Timer has already reached zero
-            }
-            
-            // Speed factor = actual time / displayed time
-            // This determines how much slower the displayed timer runs
-            return actualTimeRemaining / initialDisplayMs;
-        }
-
-        const speedFactor = calculateSpeedFactor();
+        // Calculate total time from start to target
+        const totalActualTime = target - startDate;
+        
+        // Speed factor: total actual time / total display time
+        // This ensures the displayed timer reaches zero when actual time reaches zero
+        const speedFactor = totalActualTime / initialDisplayMs;
 
         function updateCountdown() {
             const now = new Date();
@@ -595,13 +588,20 @@
                 return;
             }
 
-            // Calculate displayed time: actual time divided by speed factor
-            // This makes the timer count down slower
-            const displayedTimeRemaining = actualTimeRemaining / speedFactor;
-
+            // Calculate how much actual time has passed since start date
+            const actualTimePassed = Math.max(0, now - startDate);
+            
+            // Calculate displayed time passed: actual time passed divided by speed factor
+            const displayedTimePassed = actualTimePassed / speedFactor;
+            
+            // Calculate remaining displayed hours: initial minus displayed time passed
+            const displayedTimeRemaining = Math.max(0, initialDisplayMs - displayedTimePassed);
             const hours = Math.floor(displayedTimeRemaining / (1000 * 60 * 60));
 
-            hoursEl.textContent = hours;
+            // Force update to ensure the display changes
+            if (hoursEl.textContent !== String(hours)) {
+                hoursEl.textContent = hours;
+            }
         }
 
         // Update immediately
