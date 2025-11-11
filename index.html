@@ -466,6 +466,44 @@
                     <text x="70" y="149" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">st.</text>
                 </g>
 
+                <!-- Camping Not Allowed Sign -->
+                <g id="campingSign" filter="url(#shadow)">
+                    <!-- Sign post -->
+                    <rect x="430" y="155" width="3" height="25" fill="#654321" opacity="0.9"/>
+                    <!-- Sign board (white background with red border for prohibition style) -->
+                    <rect x="400" y="150" width="60" height="22" fill="#FFFFFF" opacity="0.95" stroke="#DC143C" stroke-width="2" rx="2"/>
+                    <!-- Red circle with diagonal line (prohibition symbol) -->
+                    <circle cx="415" cy="161" r="6" fill="none" stroke="#DC143C" stroke-width="2"/>
+                    <line x1="409" y1="155" x2="421" y2="167" stroke="#DC143C" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Text "No camping" -->
+                    <text x="440" y="161" font-family="Arial, sans-serif" font-size="5.5" font-weight="bold" fill="#000" text-anchor="middle">No camping</text>
+                </g>
+
+                <!-- Additional grass blades in open areas (not overlapped by signs or house) -->
+                <g opacity="0.6">
+                    <!-- Grass in far left area (x < 40) -->
+                    <path d="M 15 140 Q 17 135 19 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 25 140 Q 27 133 29 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 35 140 Q 37 135 39 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 20 160 Q 22 155 24 160" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M 30 165 Q 32 160 34 165" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <!-- Grass between street sign and house (x=100-140, avoiding house at x=145+) -->
+                    <path d="M 105 140 Q 107 135 109 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 125 140 Q 127 133 129 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 110 160 Q 112 155 114 160" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M 130 165 Q 132 160 134 165" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <!-- Grass between house and camping sign (x=360-380, avoiding house at x=355-) -->
+                    <path d="M 365 140 Q 367 135 369 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 375 140 Q 377 133 379 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 360 160 Q 362 155 364 160" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M 370 165 Q 372 160 374 165" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <!-- Grass in far right area (x > 470) -->
+                    <path d="M 475 140 Q 477 135 479 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 485 140 Q 487 133 489 140" stroke="#1B5E20" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 470 160 Q 472 155 474 160" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M 480 165 Q 482 160 484 165" stroke="#1B5E20" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                </g>
+
 
                 <!-- Sun glow effect (brought forward) -->
                 <circle cx="420" cy="50" r="35" fill="url(#sunGlow)"/>
